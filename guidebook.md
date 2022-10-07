@@ -1,48 +1,32 @@
-# SAP Modernization Lab
+# Low-code Travel Request Application
 
 ## Goal
 
-In this session, you will get hands-on experience in creating a Travel Request application using the ServiceNow platform. We will cover concepts such as Building Tables, Record Producers, Integrations and Workflows within App Engine Studio - our low-code application development interface for developers of any levels of experience.
+In this session, you will get hands-on experience in creating a Travel Request application using the ServiceNow platform. We will cover concepts such as Building Tables, Record Producers, Integrations and Workflows within App Engine Studio - our low-code application development interface for developers of any level of experience.
 
 ## Background
 
 ![relative](images/nowairline.png)
 
-As the Travel and Expense manager at ACME Corporation , you currently have very little visibility and control in the travel plans of your employees. Any travel plans now are requested via email from an employee to their manager, and you only get notified once the expense claims come in. The CFO has hence tasked you with the task of better managing the costs associated with travel of your employees, and making sure that their travels are justifiable and reasonable. With that in mind, you have decided to take things in your own hands and build a Travel Request application leveraging the ServiceNow platform.
+As the Travel and Expense manager at ACME Corporation , you currently have very little visibility and control in the travel plans of your employees. Any travel plans now are requested via email from an employee to their manager, and you only get notified once the expense claims come in. The CFO has hence given you the task of better managing the costs associated with travel of your employees, and making sure that their travels are justifiable and reasonable. With that in mind, you have decided to take things in your own hands and build a Travel Request application leveraging the ServiceNow platform.
 
-# Exercise 1: Delegation of Authority
+# Exercise 1: Creating tables for our travel request application
 
 ## Introduction
 
-When it comes to automating ERP workflows, nothing is more painful, or more time consuming than the approval cycle. Couple that with a rigid system like SAP, and it becomes difficult to track, let alone automate approvals on everyday transactions like Purchase Orders, Sales Orders, Invoices, etc. A common term for this process is Delegation of Authority (DoA), or an Approval Matrix.
-
-Within SAP, [there is such a feature](https://help.sap.com/doc/132b1ea8da1d4281a2da23f3cf506809/2.0.06/en-US/07dc534035524965a902c5bd6ffdbc3a.html), but it is limited in capability and does not scale for exceptional workflows.
-
-
-## Tales from the field
-
-In one of our customer's internal landscape, they reported having 54 different workflows that covers multiple business objects, and their solution to that was over 12,000 lines of code in a custom .NET application for approvals and authority. Some of these workflows require 7 or more levels of approvals, and any changes to personnel or approval logic requires a major rewrite of the code, which they currently spend over 30 days a year doing. Approvers only have one desktop interface they can use to run these approvals. Obviously not scalable, and a terrible user experience! 
-
-![relative](images/approvalsmatrix.png)
-> The sample that we will work with, but it usually gets a lot more complicated than this ☠️
-
-Thankfully, we have the solution for this, so let's start by showing how you can run these approval matrices on top of the Sales Order documents from SAP. 
-<br><br>
-For easy reference, this is how the Standard Order (Sales Order) document looks like in SAP ECC. You navigate to this module by entering the T code *VA01*. The T Code (Transaction code) is a 4 digit shortcut key to access a requested transaction, sort of like carrying out an *incident.list* command in the ServiceNow UI.
-
-![relative](images/sapstandardorder.png)
+In the first section, we will create two tables. Our first table will be used to capture the Travel Requests coming in from employees, and our second table will be used to store all the major airports and cities that can be traveled to. We will assume that all Travel Requests will only be for air travel!
 
 ## Let's start
 
-1. Under **All**, search and navigate to **App Engine Studio**
+1. Click **All**, then search and click **App Engine Studio**
 
-    ![relative](images/aesnavigate.png)
+    ![relative](images/openaes.png)
 
 1. Click **Create app** on the top right of the screen
 
     ![relative](images/createapp.png)
 
-1. On the Create App page, name the app "Delegation of Authority", and for description, enter "Create an approval matrix for various SAP documents"
+1. On the Create App page, name the app "Travel request", and for description, enter "Track travel requests from employees."
 
     ![relative](images/appname.png)
 
@@ -52,13 +36,20 @@ For easy reference, this is how the Standard Order (Sales Order) document looks 
 
 1. Click **Go to app dashboard**
 
-## Create a Sales Order table
+    > What you've just done is create a scoped application. Scope uniquely identifies every application file, not just within a single ServiceNow instance, but in every instance around the world. Why is this important?
+    >- Scope protects an application, its files, and its data from conflicts with other applications.
+    >- Scope determines which parts of an application are available for use by other applications in ServiceNow.
+    >- Scope allows developers to configure which parts of their application can be acted on by other applications.
+    >- Scope prevents work done in the main ServiceNow browser window (not in Studio) from becoming part of an application's files.
+    >- Witout Scope, it will be very difficult to govern new applications!
 
-We will now create a table to store Sales Order document data from SAP.
+## Create a Travel Request table
+
+We will now create a table to capture the travel requests.
 
 1. Under **Data**, click **Add**
 
-    ![relative](images/adddata.png)
+    ![relative](images/addtable1.png)
 
 1. Click **Create a table**
 
@@ -66,23 +57,29 @@ We will now create a table to store Sales Order document data from SAP.
 
 1. On the *Add Data* page, click **Create from an existing table**
 
+1. Click **Continue**
+
+    ![relative](images/existingtable.png)
+
 1. On the next page, search and select **Task**
 
     ![relative](images/selecttask.png)
 
+    >The task table is one of the core tables provided on the platform. Any table that extends task can take advantage of task-specific functionality such as SLAs and Approvals. This speeds up the overall process and ease of building logic.
+
 1. Click **Continue**
 
-1. For Table label, enter **SAP Sales Order**. Table name should be auto-populated.
+1. For Table label, enter **Travel request**. Table name should be auto-populated.
 
 1. Check **Auto number**
 
-1. For Prefix, enter **SAPSO**
+1. For Prefix, enter **TRVREQ**
 
     ![relative](images/tabledetails.png)
 
 1. Click **Continue**
 
-1. Allow all access for *admin* and *user*, then click **Continue**
+1. Allow all access for *admin* and **Create** and **Read** access for *user*, then click **Continue**
 
     ![relative](images/tabacl.png)
 
@@ -94,31 +91,41 @@ We will now create a table to store Sales Order document data from SAP.
 
     Column label | Type
     -------------- | --------------
-    Document number | String
-    Document type | String
-    Amount | Decimal 
-    Sales organization | String 
-    Status | Choice (Dropdown with --None--) : New, Approval triggered, Approved, Rejected, Updated SAP
+    Departure date | Date
+    Estimated airfare | Decimal 
+    Reason for travel | Choice (Dropdown with --None--) : Internal meeting, Customer meeting, training
 
 1. Your screen should look like this
 
-    ![relative](images/addedfields.png)
+    ![relative](images/newfields1.png)
 
 1. Click **Save**
 
-1. Click **Form views** on the top of the screen
+    At this point, we could also capture the Origin and Destination via a String field so that the users can enter free text, but for more consistency, let's create a **Airports** table so that users can select these locations (like how you would select on any airline reservation website)
 
-    ![relative](images/formviewsselect.png)
+## Create an Airport table
 
-1. Click the **Default view** dropdown
+1. Click the **App Home** tab to return to the main view
 
-1. Click **+ Create**
+    ![relative](images/apphome.png)
 
-1. Enter **Sales order view**
+1. Under **Data**, click **Add**
+
+    ![relative](images/addairport.png)
+
+1. Click **Create a table**
+
+1. Click **Get started**
+
+1. This time, select **Upload a spreadsheet**
+
+    ![relative](images/uploadss.png)
+
+1. Click **Continue**
 
     ![relative](images/soview.png)
 
-1. Click **Create**
+1. Download this file: [airports.xlsx](downloads/airports.xlsx)
 
 1. Rename the section to **Sales Order** by clicking on the section and editing the **Section label** on the right panel
 
