@@ -79,13 +79,15 @@ We will now create a table to capture the travel requests.
 
 1. Click **Continue**
 
-1. Allow all access for *admin* and **Create** and **Read** access for *user*, then click **Continue**
+1. Allow all access for *admin* and **Create** and **Read** access for *user*
 
     ![relative](images/tabacl.png)
 
+1. Click **Continue**
+
 1. Click **Edit table**
 
-1. If presented with the **GETTING STARTED** pop-up, close it.
+1. If presented with the **Welcome to Table builder** pop-up, read through the steps, then close it.
 
 1. You should now be on tha *Table Builder* interface. Click **Add new field**, and add the following fields:
 
@@ -94,6 +96,8 @@ We will now create a table to capture the travel requests.
     Departure date | Date
     Estimated airfare | Decimal 
     Reason for travel | Choice (Dropdown with --None--) : Internal meeting, Customer meeting, Training
+
+1. Click **Done**
 
 1. Your screen should look like this
 
@@ -327,13 +331,15 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Under **Available Choices**, add the 3 reasons you added during table creation: Internal meeting, Customer meeting, Training
 
+    >The **Value** column is automatically populated, leave it as it is.
+
     ![relative](images/canpreview.png)
 
 1. On the bottom right, click **Insert Question**
 
     >For the purposes of time in this lab, we will skip adding the following fields to our form: **Departure Date** and **Estimated airfare**. Feel free to take up the challenge and add those fields into your form if you have the time.
 
-1. Expand the **Dates** section
+1. Expand the **Locations** section
 
 1. On the left column, add a **New question**
 
@@ -354,6 +360,8 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Under **Source table**, search and select **Airport** (This is the table you imported from the spreadsheet)
 
+    ![relative](images/selectairport.png)
+
 1. On the bottom right, click **Insert Question**
 
 1. In the main screen, follow the steps above once more for **Travel to**
@@ -367,16 +375,277 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question label | Where are you traveling to?
     Mandatory | **Checked**
 
+1. Remember to choose **Airport** for the **Source table** under the **Additional details** tab
+
 1. Your form should now look like this
 
     ![relative](images/clickpreview.png)
 
-1. (Optional) You can preview how your form will look like by clicking on the **Preview** button on the top right
+1. Preview how your form will look like by clicking on the **Preview** button on the top right
     
     ![relative](images/previewform.png)
 
-1. If you're previewing the form, close it by clicking the cross icon on the top right
+1. Try filling in the form with any details
+
+1. Close the preview by clicking the cross icon on the top right
 
 1. On the left sidebar, click **Review and submit**
 
 1. Click the **Submit** button
+
+We will test this form on the *Employee Center Portal* at the end of the exercise. Now it's time for us to create an approval workflow for this travel request!
+
+# Exercise 3: Creating an approval workflow
+
+The workflow here that we will create, is that any time an employee raises a travel request, the request will be routed to their manager for approval.
+
+1. Navigate back to the **App Home** tab
+
+1. Click **Add** under **Logic and automation**
+
+    ![relative](images/addworkflow.png)
+
+1. Click **Flow**
+
+    ![relative](images/clickflow.png)
+
+1. Click **Build from scratch**
+
+1. For **Name**, enter **Travel request approval**
+
+1. For **Description**, enter **Route travel request approval to requestor's manager**
+
+1. Expand **Show advanced options**
+
+1. Change **Run as** to **System user**
+
+    ![relative](images/flowname.png)
+
+1. Click **Continue**
+
+1. Click **Edit this flow**
+
+1. Close the **Getting started** pop-up box
+
+1. Click **Add a trigger**
+
+1. Under **RECORD**, click **Created**
+
+    ![relative](images/addtrigger.png)
+    
+1. Under **Table**, search and select **Travel request**
+
+    ![relative](images/tableselect.png)
+
+1. Click **Done**
+
+1. Click **Add an Action, Flow Logic, or Subflow**
+
+1. Click **Action**
+
+1. Search and select **Ask for approval**
+
+    ![relative](images/askforapproval.png)
+
+1. In the **Ask for Approval** action box, drag and drop the **Travel request Record** from the Data pill picker on the right sidebar, into the **Record** box
+
+    ![relative](images/dragrecord.png)
+
+1. Under **Rules**, change **Approve** to **Approve or Reject**
+
+1. Change **-Choose approval rule** to **Anyone approves or rejects**
+
+    ![relative](images/afa.png)
+
+    >We want the approval to be routed to the requestor's manager, so we will perform what is known as dot-walking to find the related user's manager.
+
+1. From the right sidebar (Data pill picker), expand the **Travel request Record** by clicking the expand arrow
+
+    ![relative](images/expanddatapill.png)
+
+1. Look for the **Opened by** data pill, and expand it
+
+    ![relative](images/openedby.png)
+
+1. Under the **Opened by** section, look for the **Manager** data pill
+
+    ![relative](images/dropmanager.png)
+
+1. Click **Done**
+
+    >What we have achieved here is that we are looking for the user who opened the record's manager to be the approver for this record.
+
+1. Click **Add an Action, Flow Logic, or Subflow**
+
+1. Click **Flow Logic**
+
+1. Click **If**
+
+    ![relative](images/if.png)
+
+1. Under **Condition**, enter **Manager approved**
+
+1. Drag and drop the **Approval State** data pill from the right sidebar onto **Condition 1**
+
+1. Change the choice to **Approved**
+
+    ![relative](images/stateapproved.png)
+
+1. Click **Done**
+
+1. Click **Save** on the top right of the screen
+
+1. Click on the **+** icon **next to then**
+
+    ![relative](images/thenplus.png)
+
+1. Click **Action**
+
+1. Search and select **Update Record**
+
+1. Drag and drop the **Travel request Record** onto the **Record** field
+
+1. Under **Fields**, select the **State** field and change the choice to **Closed Complete**
+
+    ![relative](images/closedcomplete.png)
+
+1. Click **Done**
+
+1. Click **Save** on the top right of the screen
+
+    *(Optional)* Now we will complete the flow by creating the logic of a rejected approval. As a challenge, can you complete the rest of the flow yourself? The end result should look like this:
+
+    ![relative](images/rejected1.png) 
+
+    ![relative](images/rejected2.png)
+
+1. Hint: You can always toggle the flow diagramming view by clicking on this icon
+
+    ![relative](images/flowdiagram.png)
+
+1. Click **Activate** on the top right of the screen
+
+# Exercise 4: Putting it all together - Testing our application
+
+Congratulations on making it so far! We have one last thing to do, which is to test our application. We will first directly grant a Travel request user role to one of our employees for the test.
+
+1. Head back into the main ServiceNow interface
+
+1. On the global search, enter **billie.cowley** and click **View results**
+
+    ![relative](images/searchbillie.png)
+
+1. Click **Billie Cowley**
+
+    ![relative](images/selectbillie.png)
+
+1. On Billie's user record, click the **Roles** tab below, then click **Edit**
+
+    ![relative](images/billierecord.png)
+
+    >Also notice on the screenshot above that Billie's manager is Krystle Stika. You won't be able to see this on your screen, but note that this has been preconfigured for you.
+
+1. Under **Collection**, search **x_snc_travel**, you should see the two roles you created for your custom application.
+
+1. Grant the **user** role to Billie by moving it into the **Roles List**
+    
+    ![relative](images/grantrole.png)
+
+1. Click **Save**
+
+1. Click on the profile picture on the top right, and click **Impersonate user**
+
+    ![relative](images/impersonateuser.png)
+
+1. Search and select **Billie Cowley**
+
+1. Click **Impersonate user**
+
+    ![relative](images/billie.png)
+
+1. Close the pop-up screen
+
+1. Copy the current URL of the page, and open a new Browser tab
+
+1. Paste the URL, and replace everything after **service-now.com** with **/sp**
+
+    > e.g. **if the copied URL is**: https://sad-oct-123-001.lab.service-now.com/now/nav/ui/classic/params/target/ui_page.do%3Fsys_id%3De7766625074130102b8affa08c1ed037 <br><br>
+    **change it to:**
+    https://sad-oct-123-001.lab.service-now.com/sp 
+
+1. The Service Portal page should now open
+
+1. Under **How can we help?**, search for **Travel request**
+
+    ![relative](images/searchtrv.png)
+
+1. Click the **Search icon**
+
+1. The top result should return the form we had created in Exercise 2
+
+    ![relative](images/trvreqsearch.png)
+
+1. Click **Raise a travel request**
+
+1. Confirm that the form appears as expected, then fill in all the fields
+
+    ![relative](images/fillform.png)
+
+1. Click **Submit**
+
+1. The next screen can be used to track the status of the request and add attachments
+
+    ![relative](images/trackreq.png)
+
+1. Go back to the ServiceNow main interface, and **End impersonation**
+    
+    ![relative](images/impanother.png)
+
+1. Under **All**, search and select **My Approvals**
+
+    ![relative](images/myapprovals.png)
+
+1. Remove the filer by clicking **All**
+
+    ![relative](images/clickall.png)
+
+1. Filter by the latest created approval date by clicking **Created**
+
+1. Click on the **Requested** record for **Krystle Stika** as the **Approver**
+
+    ![relative](images/applist.png)
+
+1. Click **Approve**
+
+    ![relative](images/approve.png)
+
+1. You will be brought back to the list view
+
+1. Click on the Approved record for your Travel request, if you followed all the steps so far, this should be the first record created: TRVREQ0001001
+
+    ![relative](images/clicktrvreq.png)
+
+1. On the record, notice that the **State** was automatically changed to **Closed Complete**, as per our approval flow that was designed
+    
+    ![relative](images/closedcomplete2.png)
+
+# Congratulations, you did it!
+
+You've successfully built a simple application to track requests for employees to raise travel requests!
+
+![relative](images/celebrate.gif)
+
+There are obviously so much more you can do with the application to make it even better, some ideas:
+
+1. Integrate with APIs to get a list of flights on specific travel dates so you get as accurate a travel estimate as possible
+
+1. Run all requests and approvals via Email / Microsoft Teams / Slack / Virtual Agent etc.
+
+1. Build dashboards to track requests
+
+1. Build a travel workspace with playbooks that can monitor requests and also have direct communication with the requestors
+
+You get the idea, the list is endless. You are only limited by your imagination on making the experience seamless for every one involved. This is only the beginning!
+
+ServiceNow makes the world of work, work better for people!
+
