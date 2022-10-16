@@ -228,3 +228,5 @@ Great, you now have a table to store the list of Airports around the world!
 1. Click **Save**
 
 Congratulations, you have completed Exercise 1 and now have a complete way to store the Travel requests from your employees.
+
+[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn .btn-purple }

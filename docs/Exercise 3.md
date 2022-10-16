@@ -133,3 +133,6 @@ The workflow here that we will create, is that any time an employee raises a tra
     ![relative](images/flowdiagram.png)
 
 1. Click **Activate** on the top right of the screen
+
+[Previous exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn }
+[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%203.html){: .btn .btn-purple }
