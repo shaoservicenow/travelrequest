@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuration
+nav_order: 5
+---
+
 # Exercise 4: Putting it all together - Testing our application
 
 Congratulations on making it so far! We have one last thing to do, which is to test our application. We will first directly grant a Travel request user role to one of our employees for the test.
