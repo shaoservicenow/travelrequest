@@ -8,7 +8,7 @@ nav_order: 2
 
 ## Introduction
 
-In the first section, we will create two tables. Our first table will be used to capture the Travel Requests coming in from employees, and our second table will be used to store all the major airports and cities that can be traveled to. We will assume that all Travel Requests will only be for air travel!
+In the first section, we will create two tables. Our first table will be used to capture the Travel Requests coming in from employees, and our second table will be used to store all the major airports and cities that can be traveled to. We will assume that all Travel Requests will only be for air travel.
 
 ## Let's start
 
@@ -59,7 +59,7 @@ We will now create a table to capture the travel requests.
 
     ![relative](images/selecttask.png)
 
-    >The task table is one of the core tables provided on the platform. Any table that extends task can take advantage of task-specific functionality such as SLAs and Approvals. This speeds up the overall process and ease of building logic.
+    >The task table is one of the core tables provided on the platform. Any table that extends task can take advantage of task-specific functionality such as SLAs and Approvals. This speeds up the overall process and ease of building logic and functionality.
 
 1. Click **Continue**
 
@@ -83,13 +83,13 @@ We will now create a table to capture the travel requests.
 
 1. If presented with the **Welcome to Table builder** pop-up, read through the steps, then close it.
 
-1. You should now be on tha *Table Builder* interface. Click **Add new field**, and add the following fields:
+1. You should now be on the *Table Builder* interface. Click **Add new field**, and add the following fields:
 
     Column label | Type
     -------------- | --------------
     Departure date | Date
     Estimated airfare | Decimal 
-    Reason for travel | Choice (Dropdown with --None--) : Internal meeting, Customer meeting, Training
+    Reason for travel | Choice (Dropdown with --None--) : **Internal meeting, Customer meeting, Training**
 
 1. Click **Done**
 
@@ -99,7 +99,7 @@ We will now create a table to capture the travel requests.
 
 1. Click **Save**
 
-    At this point, we could also capture the Origin and Destination via a String field so that the users can enter free text, but for more consistency, let's create a **Airports** table so that users can select these locations (like how you would select on any airline reservation website)
+    At this point, we could also capture the Origin and Destination via a String field so that the users can enter free text, but for more consistency, let's create an **Airports** table so that users can select these locations (like how you would select on any airline reservation website)
 
 ## Create an Airport table
 
@@ -127,7 +127,7 @@ We will now create a table to capture the travel requests.
 
     ![relative](images/uploadcomplete.png)
 
-1. *IMPORTANT*: Make sure to check the **Import spreadsheet data** box.
+1. ***IMPORTANT***: Make sure to check the **Import spreadsheet data** box.
 
 1. Click **Continue**
 

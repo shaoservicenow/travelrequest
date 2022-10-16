@@ -84,7 +84,7 @@ Congratulations on making it so far! We have one last thing to do, which is to t
 
     ![relative](images/myapprovals.png)
 
-1. Remove the filer by clicking **All**
+1. Remove the filter by clicking **All**
 
     ![relative](images/clickall.png)
 
@@ -110,7 +110,7 @@ Congratulations on making it so far! We have one last thing to do, which is to t
 
 # Congratulations, you did it!
 
-You've successfully built a simple application to track requests for employees to raise travel requests!
+You've successfully built a simple application for employees to raise travel requests and seek manager approval!
 
 ![relative](images/celebrate.gif)
 
@@ -118,13 +118,15 @@ There are obviously so much more you can do with the application to make it even
 
 1. Integrate with APIs to get a list of flights on specific travel dates so you get as accurate a travel estimate as possible
 
+1. Add functionality to capture multiple location travel itineraries
+
 1. Run all requests and approvals via Email / Microsoft Teams / Slack / Virtual Agent etc.
 
 1. Build dashboards to track requests
 
 1. Build a travel workspace with playbooks that can monitor requests and also have direct communication with the requestors
 
-You get the idea, the list is endless. You are only limited by your imagination on making the experience seamless for every one involved. This is only the beginning!
+You get the idea... the list is endless. You are only limited by your imagination on making the experience seamless for every one involved. This is only the beginning.
 
 ServiceNow makes the world of work, work better for people!
 
