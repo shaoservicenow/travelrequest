@@ -1,2 +1,8 @@
 remote_theme: just-the-docs/just-the-docs
 logo: "/images/servicenow-logo.png"
+nav_order:
+---
+layout: default
+title: Introduction
+nav_order: 0
+---
