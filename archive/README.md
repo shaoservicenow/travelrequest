@@ -1,3 +1,9 @@
+---
+layout: default
+title: Full guide
+nav_exclude: true
+---
+
 # Travel request application
 ## Goal
 

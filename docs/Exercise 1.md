@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuration
+title: Exercise 1 Tables
 nav_order: 2
 ---
 

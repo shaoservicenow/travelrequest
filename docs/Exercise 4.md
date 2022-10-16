@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuration
+title: Exercise 4 Testing
 nav_order: 5
 ---
 

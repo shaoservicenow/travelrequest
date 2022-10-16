@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuration
+title: Exercise 2 User Forms
 nav_order: 3
 ---
 

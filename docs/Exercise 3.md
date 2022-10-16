@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Configuration
+title: Exercise 3 Workflows
 nav_order: 4
 ---
 
