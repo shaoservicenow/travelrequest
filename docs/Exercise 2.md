@@ -164,5 +164,5 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 We will test this form on the *Employee Center Portal* at the end of the exercise. Now it's time for us to create an approval workflow for this travel request!
 
-[Previous exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%201.html){: .btn }
-[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn .btn-purple }
+[Previous exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%201.html){: .btn .mr-4 }
+[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%203.html){: .btn .btn-purple }

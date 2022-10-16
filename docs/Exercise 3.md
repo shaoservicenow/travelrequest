@@ -134,5 +134,5 @@ The workflow here that we will create, is that any time an employee raises a tra
 
 1. Click **Activate** on the top right of the screen
 
-[Previous exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn }
-[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%203.html){: .btn .btn-purple }
+[Previous exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn .mr-4 }
+[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%204.html){: .btn .btn-purple }
