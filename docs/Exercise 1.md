@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuration
+nav_order: 2
+---
+
 # Exercise 1: Creating tables for our travel request application
 
 ## Introduction
@@ -115,7 +121,7 @@ We will now create a table to capture the travel requests.
 
 1. Click **Continue**
 
-1. Download this file: [airports.xlsx](https://github.com/shaoservicenow/travelrequest/raw/main/downloads/airports.xlsx "download")
+1. Download this file: [airports.xlsx](https://github.com/shaoservicenow/travelrequest/raw/main/docs/downloads/airports.xlsx "download")
 
 1. Upload the downloaded file to the upload box. You should see the following screen once the upload is successful
 

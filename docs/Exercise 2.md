@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuration
+nav_order: 3
+---
+
 # Exercise 2: Creating a form on the Portal
 
 For this exercise, we will focus on exposing your newly created table on one of the employee portals so that your employees can easily access and create a travel request for themselves.

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Configuration
+nav_order: 4
+---
+
 # Exercise 3: Creating an approval workflow
 
 The workflow here that we will create, is that any time an employee raises a travel request, the request will be routed to their manager for approval.
