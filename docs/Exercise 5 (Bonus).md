@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Bonus Exercise - Create an API integration
+title: Bonus Exercise APIs
 nav_order: 6
+nav_exclude: true
 ---
 
 # Bonus Exercise: Creating an API Integration
 
 In this bonus exercise, we will use a real webservice API to update our list of airports which we previously imported via an excel spreadsheet. This will ensure that the locations all remain up to date, and users can select from any airport required.
 
-1. Head back into the main ServiceNow interface
+1. Go to https://airlabs.co/ and click **Sign Up**
 
 1. On the global search, enter **billie.cowley** and click **View results**
 
