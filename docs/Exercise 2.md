@@ -20,7 +20,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Click **Get started**
 
-1. On the **ADD EXPERIENCE** screen, enter *Raise a travel request* for **Name**, and *Capture employee travel requests* for description
+1. On the **ADD EXPERIENCE** screen, enter *Raise a travel request* under **Name**, and *Capture employee travel requests* for description
 
     ![relative](images/namerp.png)
     
@@ -46,11 +46,9 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
     ![relative](images/browse.png)
 
-1. On the next screen, look for **Service Catalog** under the **Available** section and double click on it (Your list might appear different from the screenshot below)
+1. On the next screen, look for **Service Catalog** under the **Available** section and move it to the right (Your list might appear different from the screenshot below)
 
-    ![relative](images/selectservicecat.png)
-
-1. After double clicking, ensure that **Service Catalog** now appears in the **Selected** section
+1. Ensure that **Service Catalog** now appears in the **Selected** section
 
 1. On the bottom right, click **Save selections**
 
@@ -58,7 +56,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. This time, do the same as before, and select **Can We Help You?** from the **Available** list
 
-    ![relative](images/canwehelp.png)
+    ![relative](images/selectservicecat.gif)
 
 1. On the left sidebar, select **Questions**
 
@@ -70,7 +68,9 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Click **Submit**
 
-1. Repeat the top 3 steps again, but this time select **Two column container** and enter **Locations**
+1. Repeat the top 3 steps again, but this time select **Two column container** and enter **Dates and locations**
+
+    ![relative](images/addsections.gif)
 
 1. Your screen should look like this
    
@@ -91,8 +91,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question label | What is the reason for travel?
     Mandatory | **Checked**
 
-    ![relative](images/filledp1.png)
-    ![relative](images/reasonpt2.png)
+    ![relative](images/reasonfortravel1.gif)
 
 1. Click **Choices**
 
@@ -102,19 +101,41 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
     >The **Value** column is automatically populated, leave it as it is.
 
-    ![relative](images/canpreview.png)
-
 1. On the bottom right, click **Insert Question**
 
-    >For the purposes of time in this lab, we will skip adding the following fields to our form: **Departure Date** and **Estimated airfare**. Feel free to take up the challenge and add those fields into your form if you have the time.
+    ![relative](images/insertreason.gif)
 
-1. Expand the **Locations** section
+1. Expand the **Dates and locations** section
 
 1. On the left column, add a **New question**
 
     ![relative](images/datequestion.png)
 
 1. Fill out the form as follows
+
+    Name | Selection
+    -------------- | --------------
+    Question type | Date / Time
+    Question subtype | Date
+    Map to a specific field on the table | **Checked**
+    Tabel field | Departure date
+    Question label | When are you leaving?
+
+1. Click **Insert Question** at the bottom right
+
+1. Repeat the steps above again for **Return date**
+
+    Name | Selection
+    -------------- | --------------
+    Question type | Date / Time
+    Question subtype | Date
+    Map to a specific field on the table | **Checked**
+    Tabel field | Return date
+    Question label | When do you return?
+
+1. Now we will capture the locations by looking at the **Airport** table we created
+
+1. Under the same **Dates and locations** section, add a new question
 
     Name | Selection
     -------------- | --------------
@@ -154,7 +175,13 @@ For this exercise, we will focus on exposing your newly created table on one of 
     
     ![relative](images/previewform.png)
 
-1. Try filling in the form with any details
+1. Try filling in the form with any details, but you won't be able to submit the form as it is in preview mode only
+
+1. Click **Now Mobile** on the left sidebar
+
+    ![relative](images/nowmobile.png)
+
+1. The experience also automatically gets added to the mobile catalog, so your users can request for travel on the go
 
 1. Close the preview by clicking the cross icon on the top right
 
@@ -162,7 +189,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Click the **Submit** button
 
-We will test this form on the *Employee Center Portal* at the end of the exercise. Now it's time for us to create an approval workflow for this travel request!
+We will test this form on the *Employee Center Portal* at the end of this session. Now it's time for us to create an approval workflow for this travel request!
 
 <br>
 

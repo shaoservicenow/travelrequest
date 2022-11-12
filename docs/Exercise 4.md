@@ -6,7 +6,7 @@ nav_order: 5
 
 # Exercise 4: Putting it all together - Testing our application
 
-Congratulations on making it so far! We have one last thing to do, which is to test our application. We will first directly grant a Travel request user role to one of our employees for the test.
+Congratulations on making it so far! We have one last thing to do, which is to test our application. Our person of interest here is Billie Cowley who is wanting to raise a travel request. His direct manager is Krystle Stika, and this relationship has already inherited through an Microsoft AD integration. We will first directly grant the Travel request user role to one of our employees for the test.
 
 1. Head back into the main ServiceNow interface
 
@@ -32,6 +32,8 @@ Congratulations on making it so far! We have one last thing to do, which is to t
 
 1. Click **Save**
 
+    >This is actually not best practice, but only for the purposes of today's activity. In a real implementation, it would be best to assign a role to a group, and then assign users to that group so they all inherit that role.
+
 1. Click on the profile picture on the top right, and click **Impersonate user**
 
     ![relative](images/impersonateuser.png)
@@ -51,6 +53,8 @@ Congratulations on making it so far! We have one last thing to do, which is to t
     > e.g. **if the copied URL is**: https://sad-oct-123-001.lab.service-now.com/now/nav/ui/classic/params/target/ui_page.do%3Fsys_id%3De7766625074130102b8affa08c1ed037 <br><br>
     **change it to:**
     https://sad-oct-123-001.lab.service-now.com/sp 
+
+    ![relative](images/getsp.gif)
 
 1. The Service Portal page should now open
 
@@ -94,7 +98,7 @@ Congratulations on making it so far! We have one last thing to do, which is to t
 
     ![relative](images/applist.png)
 
-1. Click **Approve**
+1. Review the details you submitted on the bottom of the form, then click **Approve**
 
     ![relative](images/approve.png)
 

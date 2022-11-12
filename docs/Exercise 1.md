@@ -88,6 +88,7 @@ We will now create a table to capture the travel requests.
     Column label | Type
     -------------- | --------------
     Departure date | Date
+    Return date | Date
     Estimated airfare | Decimal 
     Reason for travel | Choice (Dropdown with --None--) : **Internal meeting, Customer meeting, Training**
 
@@ -141,7 +142,7 @@ We will now create a table to capture the travel requests.
 
 1. Under **Table label**, enter **Airport**. **Table name** will be automatically populate, leave it as it is
 
-1. Check **Auto number**, then under **Prefix**, enter **AIRPORT**
+1. Check **Auto number**, leave the Prefix as it is
 
     ![relative](images/filledupairport.png)
 
@@ -163,11 +164,11 @@ We will now create a table to capture the travel requests.
 
 1. Click **Preview**
 
-1. A new tab should open and show you the list of airports you have imported. 
+1. A new tab should open and show you the list of airports you have imported. Notice that there are 100 airports imported as per our excel spreadsheet. 
   
     ![relative](images/airportlist.png)
 
-Great, you now have a table to store the list of Airports around the world!
+Great, you now have a table to store the list of Airports!
 
 ## Completing the Travel request table
 
@@ -192,7 +193,7 @@ Great, you now have a table to store the list of Airports around the world!
 
 1. Click **Save**
 
-    > For simplicity, we are not adding additional fields like Return date, Daily estimated expenses, etc. You can always choose to add those fields if you want to.
+    > For simplicity, we are not adding additional fields like Daily estimated expenses, etc. You can always choose to add those fields if you want to.
 
 ## Styling the backend form
 
@@ -207,19 +208,26 @@ Great, you now have a table to store the list of Airports around the world!
     - Priority
     - Parent
     - Active
+    
+    <br>
 
-    ![relative](images/removefields.png)
+    ![relative](images/removefields.gif)
 
 1.  These fields are inherited from the task table, and are not needed for the purposes of our application.
 
 1. From the left sidebar, search and drag in the following fields onto the form views
 
     - Reason for travel
-    - Departure date
+    - Opened by
     - Travel from
     - Travel to
+    - Departure date
+    - Return date
     - Estimated airfare
-    - Opened by
+
+    <br>
+
+    ![relative](images/editingform.gif)
 
 1. When completed, your form view should look similar to this
 
