@@ -6,7 +6,7 @@ nav_order: 4
 
 # Exercise 3: Creating an approval workflow
 
-The workflow here that we will create, is that any time an employee raises a travel request, the request will be routed to their manager for approval.
+We will be creating an approval workflow now. Let's describe what we will be designing in a sentence: *Whenever a new travel request is raised, we will route the request to the requestor's manager for approval. Once approved, we will mark the status of the request as complete*
 
 1. Navigate back to the **App Home** tab
 
@@ -81,6 +81,10 @@ The workflow here that we will create, is that any time an employee raises a tra
     ![relative](images/dropmanager.png)
 
 1. Click **Done**
+
+1. Here is a full video walkthrough in case you had difficulties at any step
+
+   ![relative](images/afastep.gif)
 
     >What we have achieved here is that we are looking for the user who opened the record's manager to be the approver for this record.
 
