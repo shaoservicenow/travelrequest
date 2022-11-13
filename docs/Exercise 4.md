@@ -3,8 +3,9 @@ layout: default
 title: Exercise 4 Testing
 nav_order: 5
 ---
-
 # Exercise 4: Putting it all together - Testing our application
+
+**Duration: 20 minutes**
 
 Congratulations on making it so far! We have one last thing to do, which is to test our application. Our person of interest here is Billie Cowley who is wanting to raise a travel request. His direct manager is Krystle Stika, and this relationship has already inherited through an Microsoft AD integration. We will first directly grant the Travel request user role to one of our employees for the test.
 

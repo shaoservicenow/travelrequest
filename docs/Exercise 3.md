@@ -3,8 +3,9 @@ layout: default
 title: Exercise 3 Workflows
 nav_order: 4
 ---
-
 # Exercise 3: Creating an approval workflow
+
+**Duration: 30 minutes**
 
 We will be creating an approval workflow now. Let's describe what we will be designing in a sentence: *Whenever a new travel request is raised, we will route the request to the requestor's manager for approval. Once approved, we will mark the status of the request as complete*
 

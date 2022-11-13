@@ -6,6 +6,8 @@ nav_order: 2
 
 # Exercise 1: Creating tables for our travel request application
 
+**Duration: 20 minutes**
+
 ## Introduction
 
 In the first section, we will create two tables. Our first table will be used to capture the Travel Requests coming in from employees, and our second table will be used to store all the major airports and cities that can be traveled to. We will assume that all Travel Requests will only be for air travel.
@@ -168,6 +170,8 @@ We will now create a table to capture the travel requests.
   
     ![relative](images/airportlist.png)
 
+    > In case you were wondering, the Lat and Lon fields are deliberately left empty. In the optional bonus exercise, we will use an API to get these values, but has no impact on our exercises.
+
 Great, you now have a table to store the list of Airports!
 
 ## Completing the Travel request table
@@ -208,7 +212,7 @@ Great, you now have a table to store the list of Airports!
     - Priority
     - Parent
     - Active
-    
+
     <br>
 
     ![relative](images/removefields.gif)

@@ -6,6 +6,8 @@ nav_order: 3
 
 # Exercise 2: Creating a form on the Portal
 
+**Duration: 30 minutes**
+
 For this exercise, we will focus on exposing your newly created table on one of the employee portals so that your employees can easily access and create a travel request for themselves.
 
 1. Click the **App Home** tab to return to the main view
