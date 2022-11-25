@@ -166,7 +166,7 @@ We will now create a table to capture the travel requests.
 
 1. Click **Preview**
 
-1. A new tab should open and show you the list of airports you have imported. Notice that there are 100 airports imported as per our excel spreadsheet. 
+1. A new tab should open and show you the list of airports you have imported. Notice that there are 24 airports imported as per our excel spreadsheet. 
   
     ![relative](images/airportlist.png)
 
@@ -201,7 +201,7 @@ Great, you now have a table to store the list of Airports!
 
 ## Styling the backend form
 
-1. Still in the table designer, click **Form views**
+1. Still in the table designer, click **Forms**
 
     ![relative](images/formviews.png)
 

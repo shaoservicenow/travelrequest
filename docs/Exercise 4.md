@@ -113,6 +113,48 @@ Congratulations on making it so far! We have one last thing to do, which is to t
     
     ![relative](images/closedcomplete2.png)
 
+## (Optional) Activity tracking
+
+1. Click the 3 line menu icon on the top left
+
+    ![relative](images/extramenu.png)
+
+1. Click **Configure**, then **Form Design**
+
+1. A new tab will open with Form Designer
+
+    ![relative](images/dragact.png)
+
+1. On the left sidebar, search **activities**
+
+1. Drag and drop **Activities (filtered)** below **Work notes**
+
+    ![relative](images/dropact.png)
+
+1. Click **Save** on the top right
+
+1. Go back to your previous tab with the form view and refresh the page
+
+1. Your form should now show the **Activities** section. This will allow you to track any changes to the fields in the form
+
+    ![relative](images/addedact.png)
+
+1. Changing the **State** field to **Work in Progress**
+
+1. Right click anywhere on the grey header bar, and click **Save**
+
+    ![relative](images/changetowip.png)
+
+1. The **Activities** section should now show the State change
+
+    ![relative](images/statechange.png)
+
+1. As an approver or fulfiller, you can also add work notes for communications both internally and with the requester.
+
+1. Try typing something into **Work notes** then click **Post**. What do you see?
+
+    ![relative](images/worknotes.png)
+
 # Congratulations, you did it!
 
 You've successfully built a simple application for employees to raise travel requests and seek manager approval!
