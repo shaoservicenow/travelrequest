@@ -11,7 +11,7 @@ nav_exclude: false
 
 In this bonus exercise, you will learn how to use Excel like formulas to add cost calculations for a travel request. Our goal here is to use a per diem rate multiplied by number of days, added to the estimated airfare cost to get an estimated trip total cost.
 
-## Part 2: Creating our formulas
+## Part 1: Creating our formulas
 
 1. Navigate back to your **App Home** screen if you are not currently on it, then click the **Travel request** table to open table builder
 
@@ -85,7 +85,7 @@ In this bonus exercise, you will learn how to use Excel like formulas to add cos
 
 1. On the top right, click **Save**
 
-## Part 1: Testing our formulas
+## Part 2: Testing our formulas
 
 1. Go back to **App Home**
 
