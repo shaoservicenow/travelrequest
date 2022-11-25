@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Bonus Exercise APIs
+title: Bonus - APIs
 nav_order: 6
 nav_exclude: false
 ---
 
-# Bonus Exercise: Integrating via APIs
+# Bonus Exercise 1: Integrating via APIs
 
 **Duration: 45 minutes**
 
@@ -266,7 +266,7 @@ If you noticed in exercise 1, when we imported the Airports from the excel sheet
 
 1. Click **Run Test**
 
-1. This will take a few minutes to run as we have a 100 airports to update. Once done, click **Your test has finished running. View the flow execution details.**
+1. This will take a few minutes to run as we have 24 airports to update. Once done, click **Your test has finished running. View the flow execution details.**
 
 1. Review the execution, take some time to expand each step to understand what has happened in this flow
 

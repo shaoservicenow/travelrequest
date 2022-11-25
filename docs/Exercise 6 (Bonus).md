@@ -1,283 +1,160 @@
 ---
 layout: default
-title: Bonus Exercise Calculations
+title: Bonus - Calculations
 nav_order: 7
-nav_exclude: true
+nav_exclude: false
 ---
 
-# Bonus Exercise: Adding calculations
+# Bonus Exercise 2: Adding calculations
 
-**Duration: 45 minutes**
+**Duration: 20 minutes**
 
-In this bonus exercise, we will use a real webservice API to update our list of airports which we previously imported via an excel spreadsheet. This will ensure that the locations all remain up to date with some additional data fields for tracking.
+In this bonus exercise, you will learn how to use Excel like formulas to add cost calculations for a travel request. Our goal here is to use a per diem rate multiplied by number of days, added to the estimated airfare cost to get an estimated trip total cost.
 
-If you noticed in exercise 1, when we imported the Airports from the excel sheet, the **Lat** and **Lon** data is empty, we will go ahead and fix that.
+## Part 1: Creating our formulas
 
-![relative](images/latlonmiss.png)
+1. Navigate back to your **App Home** screen if you are not currently on it, then click the **Travel request** table to open table builder
 
-*Note: This session will require you to use a 3rd party API service to get data. Your personal data will be required to sign up to this service. If you are not comfortable with exposing this data, skip this exercise or let your instructor know.*
+    ![relative](images/opentrvagain.png)
 
-## Part 1: Create an Integration Action
+1. Click the **Forms** button to get to form builder
 
-1. Go to https://airlabs.co/ and click **Sign Up**
+1. Click **Add a field in the table**
 
-    ![relative](images/airlabslanding.png)
+    ![relative](images/openfb.png)
 
-1. Fill in the relevant details to sign up for an account
+1. In the pop-up, enter **Travel days** in **Column label**, and change **Type** to **Integer**. Leave the auto-populated field under **Column name**
 
-1. Verify your account with the email sent to the email address sent to your email account
+    ![relative](images/traveldays.png)
 
-    ![relative](images/confirmationair.png)
+1. Click **Add**
 
-1. Sign in to your airlabs account on the next page
+1. Click **Add another one**
 
-1. Click **Copy** next to **API Key**
+    ![relative](images/another.png)
 
-    ![relative](images/airlandingpage.png)
+1. Enter **Estimated trip cost** in **Column label**, and change **Type** to **Decimal**. Leave the auto-populated field under **Column name**
 
-1. Paste your copied **API Key** somewhere that you are able to retrieve later
+    ![relative](images/estimatedtrip.png)
 
-1. Click **Documentation**, then **Airports**
+1. Click **Add**
 
-1. Quickly read through this API documentation, notice that the API request has already been populated for you - We will rebuild this
+1. Click **Done**
 
-1. Navigate back to your main ServiceNow interface, and search and click **Action Designer** under **All**
+1. You should notice now on the left sidebar two form elements highlighted with a purple left border. These are your new fields you added
 
-    ![relative](images/actiondesigner.png)
+1. Drag and drop the **Travel days** and **Estimated trip cost** form elements onto your form
 
-1. You are brough to the **Flow Designer** interface
+    ![relative](images/dragnew.gif)
 
-1. Click the **New** button on the top right, then click **Action**
+1. Click **Save**
 
-    ![relative](images/clickaction.png)
+1. Click the **Travel days** form element
 
-1. In the pop-up, enter **Get Airport Details** under *Action name*. For description, enter **Calls the Airlabs API to retrieve airport details**
+1. On the rightside bar, you should see the options change
 
-    ![relative](images/actionprops.png)
+1. Click **Formula**
+
+1. Click **Add**
+
+    ![relative](images/openformula.png)
+
+1. In the pop-up Formula box, enter the following formula:
+
+    `TIMEDIFF(return_date,departure_date)`
+
+    ![relative](images/calculatetimediff.gif)
 
 1. Click **Submit**
 
-1. Click **Create Input**
+1. On the top right, click **Save**
 
-1. Under **Label**, enter **IATA Code**, then press enter
+1. Click **Estimated trip cost**
 
-    ![relative](images/createinput.png)
+1. Click **Formula**, then **Add**
 
-1. Click on the **+** icon in between **Inputs** and **Error Evaluation** on the left sidebar
+1. In the pop-up Formula box, enter the following formula:
 
-    ![relative](images/addstep1.png)
+    `SUM(estimated_airfare,MULTIPLY(travel_days, 150))`
 
-1. In the pop-up box, scroll down and click **REST**
+    ![relative](images/totaltripcost.gif)
 
-    ![relative](images/rest.png)
-
-1. Change **Connection** to **Define Connection Inline**
-
-1. Copy this URL and paste it under **Base URL**:
-    <br>
-    `https://airlabs.co/api/v9`
-
-1. Enter **/airports** under **Resource Path**
-
-1. Click on the **+** icon for **Query Parameters**
-
-1. Enter **api_key** under **Name**, then paste your previously copied API Key under **Value**
-
-1. 1. Click on the **+** icon for **Query Parameters**
-
-1. Enter **iata_code** under **Name**, then drag and drop the **IATA Code** data pill on the right sidebar onto the **Value** field
-
-1. Click on the **+** icon for **Headers**
-
-1. Enter **User-Agent** under **Name**, and **XXXXXX** under **Value**
-
-1. Your form should now look like this:
-
-    ![relative](images/restcomplete.png)
-
-1. Click **Save** at the top right
-
-1. Click **Test** at the top right
-
-1. Enter **SIN** under the IATA Code field, then click **Run Test**
-
-1. Click **Your test has finished running. View the action execution details.**
-
-    ![relative](images/iatatest.png)
-
-1. The new tab shows every step of the execution so far. Expand **Steps** and scroll down to the line that shows **Response Body**
-
-1. Click on the corresponding value and copy the entire block of text
-
-    ![relative](images/copyoutput.gif)
-
-1. Navigate back the the main **Action Get Aiport Details** tab
-
-1. Close the pop-up
-
-1. Click on the **+** icon on the left sidebar after **REST step**
-
-    ![relative](images/afterrest.png)
-
-1. Scroll down and click **JSON Parser**
-
-1. Drag and drop the **Response Body** data pill from the right sidebar onto the **Source data** field
-
-1. Paste what you copied onto the main body
-
-1. Toggle the **Structured Payload View**
-
-1. Click **Generate Target**
-
-1. The **Target** on the right should be generated
-
-1. Here are all the steps in sequence:
-
-    ![relative](images/jsonparser.gif)
-
-1. Click **Outputs** on the left sidebar
-
-1. Click **Create Output**
-
-    ![relative](images/output.png)
-
-1. In the new row, change **Label** to **Output**, **Name** to **output** and **Type** to **Array.Object**
-
-    ![relative](images/arrayobj.png)
-
-1. Click **Exit Edit Mode**
-
-1. On the right sidebar, expand **root** under **JSON Parser Step**
-
-1. Drag and drop the **response** data pill onto the **Output** Value field
-
-1. Click **Publish** on the top right
-
-    ![relative](images/publishaction.gif)
-
-1. Click **Test**
-
-1. Enter **BKK** and run test, then **view execution details**
-
-1. Ensure that the **Output** is defined, and when clicking on it you see a result similar to what is shown below
-
-    ![relative](images/finaltest.png)
-
-1. You've completed integration! Now let's use it in a workflow
-
-<br>
-
-## Part 2: Using our integration action
-
-1. Close all the pop-up boxes and click on the **+** tab
-
-1. Click **Flow**
-
-    ![relative](images/newflow.png)
-
-1. Under **Flow name**, enter **Update airport information**
-
-1. Set **Run As** to **System User**
-
-    ![relative](images/updateairport.png)
+    >Our formula here takes into account that each travel day, the employee is given a $150 per diem
 
 1. Click **Submit**
 
-1. Click **Add a trigger**, then select **Daily** under date. This will run this workflow everyday
+1. On the top right, click **Save**
 
-    ![relative](images/daily.png)
+## Part 1: Testing our formulas
 
-1. Click **Done**
+1. Go back to **App Home**
 
-1. Click **Add an Action, Flow Logic, or Subflow**
+    ![relative](images/apphome2.png)
 
-1. Click **Action**
+1. Click **PREVIEW** on the **Travel request** row
 
-1. Search and select **Look Up Records** - Pay special attention to selecting **Look Up Records** and not **Look Up Record**
+1. A new tab opens up to show the list of **Travel requests**
 
-    ![relative](images/lookuprecords.png)
+    ![relative](images/trlist.png)
 
-1. Search and select **Airport** under **Table**
+1. We did not format this list view back in Exercise 1, so let's go ahead to do that quickly
 
-1. Click **Done**
+1. Right-click anywhere on one of the column headers
 
-1. Click **Add an Action, Flow Logic, or Subflow**
+1. Click **List Layout** under **Configure**
 
-1. Click **Flow Logic**
+    ![relative](images/listlayout.png)
 
-1. Click **For Each**
+1. On the right **Selected** section, remove everything except **Number** and **State**. Do this by double-clicking on each line to be removed
 
-    ![relative](images/foreach.png)
+    ![relative](images/numstate.png)
 
-1. Drag and drop the **Airport Records** data pill from the right sidebar onto the **Items** field
+1. Add **Opened by, Reason for travel, Departure date, Estimated trip cost** from the left **Available** section onto the right **Selected** section
 
+    ![relative](images/addedlistlayout.png)
 
-1. Click the **+** icon under the **For Each Item in** step
+1. Click **Save**
 
-    ![relative](images/dropairports.png)
+1. You should now return to the list layout (your records will be slightly different based on what you entered in the exercise 4)
 
-1. Click **Action**
+    ![relative](images/completelist.png)
 
-1. Search and click **Get Airport Details** (this was the API integration action we just created)
+1. Click **New** on the top right
 
-    ![relative](images/getairdetails.png)
+1. Fill up the form, ensure that you enter information for **Departure date**, **Return date** and any numerical figure for **Estimated airfare**
 
-1. Expand **Airport Record** on the left sidebar under the **2 - For Each** section
+    ![relative](images/addinfo.png)
 
-1. Drag and drop the **Code** data pill onto the **IATA Code** field
+1. Right-click on the form header, then click **Save**
 
-1. Click **Done**
+    ![relative](images/finishedcalc.png)
 
-    ![relative](images/addstep.gif)
+1. Notice that the **Travel days** and **Estimated trip cost** fields are automatically populated, ensure that the values are correct
 
-1. Add a new **For Each** Flow Logic under **Get Airport Details**
+1. In the screenshot above, the following was calculated
 
-1. Drag and drop the **Output** data pill onto **Items**
+    `(4 * 150) + 1,390.50 = 1,990.50`
 
-1. Click the **+** under the new **For Each Item in** step
+Well done, you now understand how to build excel-like formulas into your application! Here are some other possible formulas that are currently supported, but more are on the way:
 
-    ![relative](images/foreachairport.png)
+1. **AND** Performs a logical AND operation on the arguments.
+1. **AVERAGE** Returns the average value of the arguments.
+1. **CONCATENATE** Joins one or more input strings into a single string.
+1. **DIVIDE** Returns the quotient value after dividing argument 2 by argument 1.
+1. **IF** Executes the specified statements based on the Boolean output of the conditional expression.
+1. **ISBLANK** Finds white spaces or blank values in the string and returns true if there are any.
+1. **LENGTH** Returns the total number of characters in the input string.
+1. **LOWERCASE** Converts the input string to all lowercase characters.
+1. **MAX** Returns the highest value in the specified arguments.
+1. **MIN** Returns the lowest value in the specified arguments.
+1. **MULTIPLY** Returns the multiplied value of the arguments.
+1. **NOW** Returns the current date and time of the instance in ISO format.
+1. **OR** Performs logical OR operation on the arguments.
+1. **POWER** Returns the result of the base value raised to the power of the exponent value.
+1. **REPLACE** Replaces characters in the source string with the characters in the target string.
+1. **SUBTRACT** Returns the result value after subtracting argument 2 from argument 1.
+1. **SUM** Returns the sum of all the arguments.
+1. **TIMEDIFF** Finds difference between 2 dates for Duration field.
+1. **TITLECASE** Converts the input string to all title case characters.
+1. **UPPERCASE** Converts the input string to all uppercase characters.
 
-1. Click **Action**, then search and select **Update Record**
-
-1. Drag and drop the **Airport Record** data pill under **2 - For Each** onto the **Record** field
-
-1. Click **+ Add field value**
-
-1. Search and select **Lat**, expand the **response_object** data pill under **4 - For Each**
-
-1. Drag and drop the **lat** data pill on the empty field
-
-1. Click **+ Add field value**
-
-1. Search and select **Lon**, expand the **response_object** data pill under **4 - For Each**
-
-1. Drag and drop the **lng** data pill on the empty field
-
-1. Refer to the full animation below:
-
-    ![relative](images/latlon.gif)
-
-1. Click **Done**
-
-1. Click **Activate** on the top right
-
-1. Click **Test**
-
-1. Click **Run Test**
-
-1. This will take a few minutes to run as we have a 100 airports to update. Once done, click **Your test has finished running. View the flow execution details.**
-
-1. Review the execution, take some time to expand each step to understand what has happened in this flow
-
-    ![relative](images/fullexecution.png)
-
-1. Go back to App Engine Studio and preview the **Airport** table
-
-    ![relative](images/previewair.png)
-
-1. This will open in a new tab, verify that all the **Lat** and **Lon** fields are now populated
-
-    ![relative](images/latlonfinal.png)
-
-This flow should now run everyday to update the latitude and longitude of each airport in your table. In a real life scenario, you could do so much more with the API, but this is just an example to show you the possibilites. For example, you could integrate with a complex booking API like Amadeus, and your users could search for flights and book flights and hotels directly from your custom application!
