@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Bonus - Workspace
+title: Bonus - Dashboard Workspace
 nav_order: 8
-nav_exclude: true
+nav_exclude: false
 ---
 
 # Bonus Exercise 3: Adding a workspace for travel requests
