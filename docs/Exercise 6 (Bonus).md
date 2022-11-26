@@ -135,6 +135,8 @@ In this bonus exercise, you will learn how to use Excel like formulas to add cos
 
     `(4 * 150) + 1,390.50 = 1,990.50`
 
+![relative](images/funnycalculation.gif)
+
 Well done, you now understand how to build excel-like formulas into your application! Here are some other possible formulas that are currently supported, but more are on the way:
 
 1. **AND** Performs a logical AND operation on the arguments.
