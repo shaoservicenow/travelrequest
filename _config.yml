@@ -30,6 +30,6 @@ search:
 
 
 nav_external_links:
-  - title: Creator Workflows Lab Guides
+  - title: Back to Creator Workflows Lab Guides
     url: https://creatorworkflowsnow.github.io
-    hide_icon: false 
+    hide_icon: true 
