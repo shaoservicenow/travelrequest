@@ -27,3 +27,9 @@ search:
   # Enable or disable the search button that appears in the bottom right corner of every page
   # Supports true or false (default)
   button: false
+
+
+nav_external_links:
+  - title: Back to Creator Workflows Lab Guides
+    url: https://creatorworkflowsnow.github.io
+    hide_icon: true 
