@@ -32,7 +32,8 @@ This lab is authored by Shao. If you have any feedback/comments/concerns/improve
 [Start!][Exercise1]{: .btn .btn-purple }
 
 [OldTravelRequestLabLink]: https://shaoservicenow.github.io/travelrequest
-[TravelRequestLabIntro]: https://creatorworkflowsnow.github.io/travelrequest
+[TravelRequestLabHome]: https://creatorworkflowsnow.github.io/travelrequest
+
 [Exercise1]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%201.html)
 [Exercise2]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html)
 [Exercise3]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%203.html)
@@ -40,4 +41,3 @@ This lab is authored by Shao. If you have any feedback/comments/concerns/improve
 [Exercise5]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%205%20(Bonus).html)
 [Exercise6]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%206%20(Bonus).html)
 [Exercise7]: (https://shaoservicenow.github.io/travelrequest/docs/Exercise%207%20(Bonus)%20Chatbot.html)
-[TravelRequestLabIntro]: https://creatorworkflowsnow.github.io/travelrequest
