@@ -24,10 +24,6 @@ In this bonus exercise, you will learn how to create an interactive workspace fo
 
     ![relative](images/chooseworkspace.png)
 
-1. Click **Add a field in the table**
-
-    ![relative](images/openfb.png)
-
 1. Click **Begin**
 
 1. Change **Name** to **Travel Request Workspace**, **Description** to **A central workspace to manage all travel requests**
