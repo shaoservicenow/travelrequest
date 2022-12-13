@@ -51,6 +51,8 @@ We will now create a table to capture the travel requests.
 
 1. Click **Get started**
 
+1. Click **Begin**
+
 1. On the *Add Data* page, click **Create from an existing table**
 
 1. Click **Continue**
