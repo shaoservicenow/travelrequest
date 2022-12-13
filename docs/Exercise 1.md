@@ -32,12 +32,12 @@ In the first section, we will create two tables. Our first table will be used to
 
 1. Click **Go to app dashboard**
 
-    > What you've just done is create a scoped application. Scope uniquely identifies every application file, not just within a single ServiceNow instance, but in every instance around the world. Why is this important?
+    > What you've just done is create a scoped application. Scope uniquely identifies every application file, why is this important?
     >- Scope protects an application, its files, and its data from conflicts with other applications.
     >- Scope determines which parts of an application are available for use by other applications in ServiceNow.
     >- Scope allows developers to configure which parts of their application can be acted on by other applications.
     >- Scope prevents work done in the main ServiceNow browser window (not in Studio) from becoming part of an application's files.
-    >- Witout Scope, it will be very difficult to govern new applications!
+    >- Without Scope, it will be very difficult to govern new applications!
 
 ## Create a Travel Request table
 
