@@ -120,6 +120,8 @@ We will now create a table to capture the travel requests.
 
 1. Click **Get started**
 
+1. Click **Begin**
+
 1. This time, select **Upload a spreadsheet**
 
     ![relative](images/uploadss.png)
