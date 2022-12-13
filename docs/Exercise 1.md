@@ -152,6 +152,8 @@ We will now create a table to capture the travel requests.
 
     ![relative](images/filledupairport.png)
 
+    > In some cases, you might face an error informing you that the name has been taken. You can add a random string of numbers to the **Table name**, e.g. airport573839, and then change the **Prefix** back to **AIR**
+    
 1. Click **Continue**
 
 1. In the roles page, check **All** for *admin*, and only **Read** for *user*
