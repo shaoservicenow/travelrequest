@@ -94,7 +94,7 @@ We will now create a table to capture the travel requests.
     Departure date | Date
     Return date | Date
     Estimated airfare | Decimal 
-    Reason for travel | Choice (Dropdown with --None--) : **Internal meeting, Customer meeting, Training**
+    Reason for travel | Choice (Dropdown with --None--) : **Internal meeting, Customer meeting, Training** (Create each of these in a new line by pressing enter after every entry)
 
 1. Click **Done**
 
