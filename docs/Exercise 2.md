@@ -20,7 +20,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
     ![relative](images/selectrp.png) 
 
-1. Click **Get started**
+1. Click **Begin**
 
 1. On the **ADD EXPERIENCE** screen, enter *Raise a travel request* under **Name**, and *Capture employee travel requests* for description
 
@@ -89,7 +89,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question type | Choice
     Question subtype | Dropdown (fixed values)
     Map to a specific field on the table | **Checked**
-    Tabel field | Reason for travel
+    Table field | Reason for travel
     Question label | What is the reason for travel?
     Mandatory | **Checked**
 
@@ -120,7 +120,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question type | Date / Time
     Question subtype | Date
     Map to a specific field on the table | **Checked**
-    Tabel field | Departure date
+    Table field | Departure date
     Question label | When are you leaving?
 
 1. Click **Insert Question** at the bottom right
@@ -132,7 +132,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question type | Date / Time
     Question subtype | Date
     Map to a specific field on the table | **Checked**
-    Tabel field | Return date
+    Table field | Return date
     Question label | When do you return?
 
 1. Now we will capture the locations by looking at the **Airport** table we created
@@ -144,7 +144,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question type | Choice
     Question subtype | Record reference
     Map to a specific field on the table | **Checked**
-    Tabel field | Travel from
+    Table field | Travel from
     Question label | Where are you departing from?
     Mandatory | **Checked**
 
@@ -163,7 +163,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question type | Choice
     Question subtype | Record reference
     Map to a specific field on the table | **Checked**
-    Tabel field | Travel to
+    Table field | Travel to
     Question label | Where are you traveling to?
     Mandatory | **Checked**
 
