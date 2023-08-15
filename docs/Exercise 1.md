@@ -249,4 +249,5 @@ Congratulations, you have completed Exercise 1 and now have a complete way to st
 
 <br>
 
-[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn .btn-purple }
+[Previous screen](https://shaoservicenow.github.io/hyperautomation/){: .btn .mr-4 }
+[Next exercise](https://shaoservicenow.github.io/hyperautomation/Exercise%202.html){: .btn .btn-purple }
