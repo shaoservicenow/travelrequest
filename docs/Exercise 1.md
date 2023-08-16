@@ -47,19 +47,19 @@ We will now create a table to capture the travel requests.
 
     ![relative](images/addtable1.png)
 
-1. Click **Create a table**
-
-1. Click **Get started**
-
-1. Click **Begin**
-
-1. On the *Add Data* page, click **Create from an existing table**
+1. On the *Add Data* page, click **Create a blank table**
 
 1. Click **Continue**
 
     ![relative](images/existingtable.png)
 
-1. On the next page, search and select **Task**
+1. On the next page, select **Create from an extensible table**
+
+1. Click **Continue**
+
+    ![relative](images/extensibletable.png)
+
+1. On the next page, click **Table**, and select **Task** under *Recommended Tables*
 
     ![relative](images/selecttask.png)
 
@@ -71,7 +71,7 @@ We will now create a table to capture the travel requests.
 
 1. Check **Auto number**
 
-1. For Prefix, enter **TRVREQ**
+1. For Prefix, enter **TRV**
 
     ![relative](images/tabledetails.png)
 
@@ -85,22 +85,115 @@ We will now create a table to capture the travel requests.
 
 1. Click **Edit table**
 
-1. If presented with the **Welcome to Table builder** pop-up, read through the steps, then close it.
+1. If presented with the **Welcome to Table builder** pop-up, read through the steps, then close it
 
-1. You should now be on the *Table Builder* interface. Click **Add new field**, and add the following fields:
+1. You should now be on the *Table Builder* interface, in the *Spreadsheet* view
+
+    > Instead of adding fields individually via table builder, we will add fields directly onto the form view instead. But note that there are several ways to add fields to a table.
+
+1. Click on the **Forms** pill
+
+    ![relative](images/clickforms.png)
+
+1. The current form layout is inherited from the **task** table, we will only keep the fields relevant to us
+
+1. Remove the following fields from the form:
+    1. Priority
+    1. Assigned to
+    1. Configuration item
+    1. Parent
+
+    ![relative](images/removefield.png)
+
+1. The form should look like this
+
+    ![relative](images/formstate1.png)
+
+1. On the left panel, click **Add a field in the table**
+
+    ![relative](images/addifled.png)
+
+1. On the pop-up modal, enter **Departure date** under **Column label**, the **Column name** should be auto-populated
+
+1. Change **Type** to **Date**
+
+    ![relative](images/addfieldcon.png)
+
+1. Click **Add**
+
+1. Click **Add another one**
+
+1. Enter **Return date** under **Column label**, the **Column name** should be auto-populated
+
+1. Change **Type** to **Date**
+
+    ![relative](images/returndate.png)
+
+1. Click **Add**
+
+1. Click **Add another one**
+
+1. Repeat the steps above for the following 2 fields:
 
     Column label | Type
     -------------- | --------------
-    Departure date | Date
-    Return date | Date
-    Estimated airfare | Decimal 
-    Reason for travel | Choice (Dropdown with --None--) : **Internal meeting, Customer meeting, Training** (Create each of these in a new line by pressing enter after every entry)
+    Number of days | Integer
+    Reason for travel | Choice
 
-1. Click **Done**
+1. The panel on the left should show 4 new fields with a purple highlight
 
-1. Your screen should look like this
+1. Drag and drop those 4 fields onto the form
 
-    ![relative](images/newfields1.png)
+    ![relative](images/dragdrop.png)
+
+    > Tip: You will need to ensure that you see a grey outline box with a plus icon before releasing the field
+    ![relative](images/dragdrophelp.png)
+
+1. Search and add two more standard fields onto the form: **Opened by, Approval** (These come standard with the **Task** table)
+
+1. Click **Save** on the top right of the form
+
+1. Within you form, locate and click **Reason for travel**
+
+1. The right-side panel will update for the configuration of this field. Expand **Choices**, then click **Edit (1)**
+
+    ![relative](images/openchoices.png)
+
+1. On the **Edit choices for Reason for travel** screen, click **+ Add a choice**
+
+1. Under **Label**, enter Customer meeting, the **Value** field should auto-populate
+
+1. Add another two Labels: **Internal meeting** and **Training**
+
+    ![relative](images/addchoices.png)
+
+1. On the bottom right, click **Apply**
+
+1. Click **Number of days**
+
+1. On the right-side panel, expand **Formula** and click **+Add**
+
+    ![relative](images/addformula.png)
+
+1. In the pop-up **Formula** box, you are able to enter Excel based formulas. Here, we would like to calculate the number of days traveled
+
+1. Enter **TIME**, the it should automatically pickup the operator for **TIMEDIFF**, press Enter
+
+    ![relative](images/timediff.png)
+
+1. The inputs are shown in the formula example below, we need to provide two different date values
+
+1. Within the brackets, first type *return**, then select your custom field **return_date**
+
+1. Key in a **comma**
+
+    ![relative](images/returndate1.png)
+
+1. Finish off the formula by entering and selecting **departure_date**
+
+    ![relative](images/depdate.png)
+
+1. Click **Submit**
 
 1. Click **Save**
 
@@ -116,13 +209,7 @@ We will now create a table to capture the travel requests.
 
     ![relative](images/addairport.png)
 
-1. Click **Create a table**
-
-1. Click **Get started**
-
-1. Click **Begin**
-
-1. This time, select **Upload a spreadsheet**
+1. Click **Import a spreadsheet**
 
     ![relative](images/uploadss.png)
 
@@ -132,13 +219,21 @@ We will now create a table to capture the travel requests.
 
 1. Upload the downloaded file to the upload box. You should see the following screen once the upload is successful
 
-    ![relative](images/uploadcomplete.png)
+1. Ensure that **Enter a row number for the table header** is set to **1**
 
-1. ***IMPORTANT***: Make sure to check the **Import spreadsheet data** box.
+1. Check the **Import spreadsheet data** box
+
+    ![relative](images/uploadcomplete.png)
 
 1. Click **Continue**
 
-1. After a short loading time, you should land on the page that says: "Great! Here's the info we brought over from your spreadsheet"
+1. On the following page, click **Create new table**
+
+    ![relative](images/importnew.png)
+
+1. Click **Continue**
+
+1. You should land on the page that says: "Great! Here's the info we brought over from your spreadsheet"
 
     ![relative](images/mapexcel.png)
 
@@ -146,15 +241,11 @@ We will now create a table to capture the travel requests.
 
 1. Click **Continue**
 
-1. Under **Table label**, enter **Airport**. **Table name** will be automatically populate, leave it as it is
-
-1. Check **Auto number**, leave the Prefix as it is
-
-    ![relative](images/filledupairport.png)
-
-    > In some cases, you might face an error informing you that the name has been taken. You can add a random string of numbers to the **Table name**, e.g. airport573839, and then change the **Prefix** back to **AIR**
+1. Under **Table label**, enter **Airport**. **Table name** will be automatically populate
     
 1. Click **Continue**
+
+    ![relative](images/airporttab.png)
 
 1. In the roles page, check **All** for *admin*, and only **Read** for *user*
 
@@ -164,19 +255,21 @@ We will now create a table to capture the travel requests.
 
 1. Click **Edit table**
 
-1. On the table editor, toggle **Display** on the **Name** row. This is what users will search for when selecting airports
+1. You should see the imported data in the Table spreadsheet view
 
     ![relative](images/displayname.png)
 
-1. Click **Save** on the top right of the screen
-
-1. Click **Preview**
-
-1. A new tab should open and show you the list of airports you have imported. Notice that there are 24 airports imported as per our excel spreadsheet. 
-  
-    ![relative](images/airportlist.png)
-
     > In case you were wondering, the Lat and Lon fields are deliberately left empty. In the optional bonus exercise, we will use an API to get these values, but has no impact on our exercises.
+
+1. Click more next to the **Data** pill, and change the **Data views** to **Fields**
+
+    ![relative](images/changeview.png)
+
+1. Toggle **Display** to true for the **Name** field
+
+    ![relative](images/toggledisplay.png)
+
+1. Click **Save**
 
 Great, you now have a table to store the list of Airports!
 
@@ -186,68 +279,28 @@ Great, you now have a table to store the list of Airports!
 
     ![relative](images/returntreq.png)
 
-1. If not, return to **App Home** and open the **Travel request** table
+1. If not, return to **App Home** and open the **Travel request** table, ensure you are in the **Form** view
 
-1. Click **Add new field**, and add the following fields:
+1. Click **+ Add a field in the table**, and add the following fields:
 
     Column label | Type
     -------------- | --------------
     Travel from | Reference (Airport)
     Travel to | Reference (Airport) 
 
-    ![relative](images/reference1.png)
+    ![relative](images/tfromair.png)
 
-1. It should look like the following once you've added the two new fields
+1. Drag and drop your two newly created custom fields onto the form
 
-    ![relative](images/tftt.png)
+    ![relative](images/addairportfield.png)
 
 1. Click **Save**
 
     > For simplicity, we are not adding additional fields like Daily estimated expenses, etc. You can always choose to add those fields if you want to.
 
-## Styling the backend form
-
-1. Still in the table designer, click **Forms**
-
-    ![relative](images/formviews.png)
-
-1. Remove the following fields from the screen by clicking the **X** icon
-
-    - Assigned to
-    - Configuration item
-    - Priority
-    - Parent
-    - Active
-
-    <br>
-
-    ![relative](images/removefields.gif)
-
-1.  These fields are inherited from the task table, and are not needed for the purposes of our application.
-
-1. From the left sidebar, search and drag in the following fields onto the form views
-
-    - Reason for travel
-    - Opened by
-    - Travel from
-    - Travel to
-    - Departure date
-    - Return date
-    - Estimated airfare
-
-    <br>
-
-    ![relative](images/editingform.gif)
-
-1. When completed, your form view should look similar to this
-
-    ![relative](images/editedform.png)
-
-1. Click **Save**
-
 Congratulations, you have completed Exercise 1 and now have a complete way to store the Travel requests from your employees.
 
 <br>
 
-[Previous screen](https://shaoservicenow.github.io/hyperautomation/){: .btn .mr-4 }
-[Next exercise](https://shaoservicenow.github.io/hyperautomation/Exercise%202.html){: .btn .btn-purple }
+[Previous screen](https://shaoservicenow.github.io/travelrequest/){: .btn .mr-4 }
+[Next exercise](https://shaoservicenow.github.io/travelrequest/docs/Exercise%202.html){: .btn .btn-purple }
