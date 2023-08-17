@@ -7,7 +7,7 @@ nav_order: 4
 
 **Duration: 30 minutes**
 
-We will be creating an approval workflow now. Let's describe what we will be designing in a sentence: *Whenever a new travel request is raised, we will route the request to the requestor's manager for approval. Once approved, we will mark the status of the request as complete*
+Within this exercise, we will be creating an approval workflow. Let's describe what we will be designing in a sentence: *Whenever a new travel request is raised, we will route the request to the requestor's manager for approval. Once approved, we will mark the status of the request as complete*
 
 1. Navigate back to the **App Home** tab
 
