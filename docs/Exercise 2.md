@@ -23,8 +23,6 @@ For this exercise, we will focus on exposing your newly created table on one of 
 1. Click **Begin**
 
 1. On the **ADD EXPERIENCE** screen, enter *Raise a travel request* under **Name**, and *Capture employee travel requests* for description
-
-    ![relative](images/namerp.png)
     
 1. Click **Continue**
 
@@ -48,9 +46,11 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
     ![relative](images/browse.png)
 
-1. On the next screen, look for **Service Catalog** under the **Available** section and move it to the right (Your list might appear different from the screenshot below)
+1. On the next screen, look for **Service Catalog** under the **Available** section and move it to the right
 
 1. Ensure that **Service Catalog** now appears in the **Selected** section
+
+    ![relative](images/browsesc.png)
 
 1. On the bottom right, click **Save selections**
 
@@ -58,13 +58,13 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. This time, do the same as before, and select **Can We Help You?** from the **Available** list
 
-    ![relative](images/selectservicecat.gif)
+1. On the bottom right, click **Save selections**
 
 1. On the left sidebar, select **Questions**
 
 1. Click on the dropdown arrow next to **Insert new question**, and click **Single column container**
 
-    ![relative](images/scc.png)
+    ![relative](images/addcolumn1.png)
 
 1. In the pop-up box, enter **Information** under **Title**
 
@@ -72,11 +72,7 @@ For this exercise, we will focus on exposing your newly created table on one of 
 
 1. Repeat the top 3 steps again, but this time select **Two column container** and enter **Dates and locations**
 
-    ![relative](images/addsections.gif)
-
-1. Your screen should look like this
-   
-    ![relative](images/questionscolumn.png)
+    ![relative](images/columndone.png)
 
 1. Expand the **Information** section, click the **Insert** icon, and select **New question**
 
@@ -93,19 +89,21 @@ For this exercise, we will focus on exposing your newly created table on one of 
     Question label | What is the reason for travel?
     Mandatory | **Checked**
 
-    ![relative](images/reasonfortravel1.gif)
+    ![relative](images/choicept1.png)
+
+    ![relative](images/choicept2.png)
 
 1. Click **Choices**
 
 1. Check **Include none choice**
 
-1. Under **Available Choices**, add the 3 reasons you added during table creation: Internal meeting, Customer meeting, Training
+1. Under **Available Choices**, add the 3 reasons you added during table creation for **Display name**: Customer meeting, Internal meeting, Training
 
-    >The **Value** column is automatically populated, leave it as it is.
+1. Copy each of these onto the **Value** column as well (Both **Display name** and **Value** will be the same)
+
+    ![relative](images/copychoices.png)
 
 1. On the bottom right, click **Insert Question**
-
-    ![relative](images/insertreason.gif)
 
 1. Expand the **Dates and locations** section
 
@@ -182,6 +180,8 @@ For this exercise, we will focus on exposing your newly created table on one of 
 1. Click **Now Mobile** on the left sidebar
 
     ![relative](images/nowmobile.png)
+
+    >Note: Virtual agent is not installed so you will not be able to preview the conversation.
 
 1. The experience also automatically gets added to the mobile catalog, so your users can request for travel on the go
 
